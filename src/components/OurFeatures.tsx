@@ -16,12 +16,18 @@ import {
   ModalCloseButton,
   ModalBody,
   useDisclosure,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import ContactUs from '../components/Contactpagefrom'
 import useScrollTransition from "../templates/usescrolltransition";
 
 const PhDServices = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const bg = useColorModeValue("white", "gray.900");
+  const cardBg = useColorModeValue("white", "gray.800");
+  const headingColor = useColorModeValue("blue.800", "blue.200");
+  const textColor = useColorModeValue("gray.600", "gray.400");
+  
   const services = [
     {
       title: "Expertise",
@@ -66,7 +72,7 @@ const PhDServices = () => {
       <Box p={{ base: 0, md: 4 }} id="feature" mt={{ base: "0px", md: "0px" }}>
         <Stack spacing={4} as={Container} maxW={"6xl"} textAlign={"center"}>
           <Heading className='component'>Why You Choose Us</Heading >
-          <Text pb="0" color={"gray.600"} fontSize={{ base: "lg", md: "xl" }} className='component1' mb={5}>
+          <Text pb="0" color={textColor} fontSize={{ base: "lg", md: "xl" }} className='component1' mb={5}>
             At <strong>Matt Research Solutions,</strong> we are committed to providing
             high-quality services to our clients. We believe in building
             long-term relationships with our clients and providing them with the
@@ -74,7 +80,7 @@ const PhDServices = () => {
           </Text>
         </Stack>
 
-        <Box padding={{ base: "20px", md: "0px" }} bg="white" margin={{base:'0px', md: '0px 10px'}}>
+        <Box padding={{ base: "20px", md: "0px" }} bg={bg} margin={{base:'0px', md: '0px 10px'}}>
           <Grid
             templateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
             gap={8}
@@ -87,7 +93,7 @@ const PhDServices = () => {
                 borderWidth="1px"
                 borderRadius="lg"
                 padding="20px"
-                bg="white"
+                bg={cardBg}
                 boxShadow="md"
                 borderColor="gray.200"
                 _hover={{
@@ -111,7 +117,7 @@ const PhDServices = () => {
                   <Flex direction="column" align={{ base: "center", md: "flex-start" }}>
                     <Heading
                       size="md"
-                      color="blue.800"
+                      color={headingColor}
                       mb={2}
                       fontSize={{ base: "lg", md: "md" }}
                     >

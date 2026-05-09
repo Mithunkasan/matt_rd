@@ -25,6 +25,15 @@ import {
   Text,
   Textarea,
   VStack,
+  IconButton,
+  Collapse,
+  Link,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  useColorModeValue,
+  useBreakpointValue,
+  useDisclosure,
 } from "@chakra-ui/react";
 
 
@@ -98,17 +107,7 @@ const ResearchArticleWriting: React.FC = (props) => {
 
 export default ResearchArticleWriting;
 
-import {
-  IconButton,
-  Collapse,
-  Link,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-} from "@chakra-ui/react";
+
 // import logo from '../assets/logo.jpg'
 import {
   HamburgerIcon,

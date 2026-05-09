@@ -9,7 +9,13 @@ const breakpoints = {
   xl: '80em',
 }
 
+const config = {
+  initialColorMode: 'light',
+  useSystemColorMode: true,
+}
+
 const theme = extendTheme({
+  config,
   semanticTokens: {
     colors: {
       text: {
@@ -34,6 +40,14 @@ const theme = extendTheme({
   },
   fonts,
   breakpoints,
+  styles: {
+    global: (props) => ({
+      body: {
+        bg: props.colorMode === 'dark' ? 'gray.900' : 'white',
+        color: props.colorMode === 'dark' ? 'white' : 'gray.800',
+      },
+    }),
+  },
 })
 
 export default theme

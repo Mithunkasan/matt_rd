@@ -1,13 +1,17 @@
-import { Box, Text, Link, Stack, Heading, Container, SimpleGrid } from "@chakra-ui/react";
+import { Box, Text, Link, Stack, Heading, Container, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
 import Styles from "./Carousel.module.css";
 import useScrollTransition from "../templates/usescrolltransition";
 
 const HoverCard = ({ title, text, link }) => {
   useScrollTransition()
+  const cardBg = useColorModeValue("white", "gray.700");
+  const cardTitleColor = useColorModeValue("#02428d", "blue.200");
+  const cardTextColor = useColorModeValue("black", "gray.300");
+
   return (
     <Box
     
-      bg="white"
+      bg={cardBg}
       border="1px solid #E2E8F0"
       p={5} 
       rounded="md"
@@ -24,12 +28,12 @@ const HoverCard = ({ title, text, link }) => {
       }}
       
     >
-      <Text fontSize="xl" fontWeight="bold" color="#02428d" className='component'>
+      <Text fontSize="xl" fontWeight="bold" color={cardTitleColor} className='component'>
         {title}
       </Text>
-      <Text mt={4} mb={4} fontSize={['md', 'lg', 'xl']} textAlign={'center'} className='component'>
+      <Text mt={4} mb={4} fontSize={['md', 'lg', 'xl']} textAlign={'center'} className='component' color={cardTextColor}>
         {text}      </Text>
-      <Link href="/" color="#02428d" fontWeight="bold" fontSize={['md', 'lg', 'xl']} className='component1'>
+      <Link href="/" color={cardTitleColor} fontWeight="bold" fontSize={['md', 'lg', 'xl']} className='component1'>
         Click Here →
         {/* <a className="chakra-link css-1poxbv9">Click Here →</a> */}
       </Link>
@@ -38,11 +42,12 @@ const HoverCard = ({ title, text, link }) => {
 };
 
 const App = () => {
+  const subHeadingColor = useColorModeValue("gray.600", "gray.400");
   return (
     <Box p={4} mt={8} id="specialized">
       <Stack spacing={4} as={Container} maxW={['100%', '90%', '75%']} textAlign="center">
         <Heading className='component'>We Are Specialized</Heading>
-        <Text color="gray.600" fontSize={['lg', 'lg', 'xl']} className='component' justifyContent="stretch">
+        <Text color={subHeadingColor} fontSize={['lg', 'lg', 'xl']} className='component' justifyContent="stretch">
           We specialize in providing <strong>high-quality PhD services </strong> that cater to the specific needs of
           our clients. Our team of experts consists of seasoned professionals with extensive
           experience in various fields, who are dedicated to <strong> helping students achieve their academic

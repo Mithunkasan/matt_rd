@@ -1,14 +1,17 @@
 import React from 'react';
-import { Box, Heading, Text, Grid, VStack, List, ListItem, ListIcon, Flex } from '@chakra-ui/react';
+import { Box, Heading, Text, Grid, VStack, List, ListItem, ListIcon, Flex, useColorModeValue } from '@chakra-ui/react';
 import { AddIcon } from '@chakra-ui/icons';
 
 const DissertationServiceComponent = () => {
+  const bg = useColorModeValue("white", "gray.900");
+  const textColor = useColorModeValue("gray.600", "gray.400");
+
   return (
     <Flex
       direction="column"
       align="center"
       p={[4, 6, 8]} // Add padding for different screen sizes
-      bg="white"
+      bg={bg}
       borderRadius="lg"
       maxW="1300px"
       mx="auto"
@@ -39,23 +42,23 @@ const DissertationServiceComponent = () => {
             <List spacing={5} pl={{base:'0', md:'3'}}>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Innovative Solutions:</Text><Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> We provide cutting-edge engineering solutions tailored to your project’s unique challenges.</Text>
+                <Text as="span" fontWeight="bold">Innovative Solutions:</Text><Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> We provide cutting-edge engineering solutions tailored to your project’s unique challenges.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold" >Expert Team:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> Our skilled engineers guide you from concept to execution.</Text>
+                <Text as="span" fontWeight="bold" >Expert Team:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> Our skilled engineers guide you from concept to execution.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Customized Approach:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> We tailor our strategies to align with your unique project needs.</Text>
+                <Text as="span" fontWeight="bold">Customized Approach:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> We tailor our strategies to align with your unique project needs.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Comprehensive Services:</Text><Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> We offer a full suite of services, from design and analysis to project management and implementation.</Text>
+                <Text as="span" fontWeight="bold">Comprehensive Services:</Text><Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> We offer a full suite of services, from design and analysis to project management and implementation.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Sustainability Focus:</Text><Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> We prioritize sustainable practices, ensuring our solutions are effective and environmentally responsible.</Text>
+                <Text as="span" fontWeight="bold">Sustainability Focus:</Text><Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> We prioritize sustainable practices, ensuring our solutions are effective and environmentally responsible.</Text>
               </ListItem>
             </List>
           </VStack>
@@ -74,19 +77,19 @@ const DissertationServiceComponent = () => {
             <List spacing={2} pl={{base:'0', md:'3'}}>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Supportive Community:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> Join a network of scholars and professionals who offer insights and encouragement throughout your PhD journey.</Text>
+                <Text as="span" fontWeight="bold">Supportive Community:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> Join a network of scholars and professionals who offer insights and encouragement throughout your PhD journey.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Client-Centric Philosophy:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> Your satisfaction is our priority. We ensure open communication and collaboration throughout the process.</Text>
+                <Text as="span" fontWeight="bold">Client-Centric Philosophy:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> Your satisfaction is our priority. We ensure open communication and collaboration throughout the process.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Timely Delivery:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> We ensure prompt service delivery to keep you on track with your PhD timeline.</Text>
+                <Text as="span" fontWeight="bold">Timely Delivery:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> We ensure prompt service delivery to keep you on track with your PhD timeline.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>
-                <Text as="span" fontWeight="bold">Publication Success:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={'gray.600'}> Our expertise in journal selection boosts your chances of getting published in reputable journals.</Text>
+                <Text as="span" fontWeight="bold">Publication Success:</Text> <Text as="span" fontSize="lg" fontWeight={'semibold' } color={textColor}> Our expertise in journal selection boosts your chances of getting published in reputable journals.</Text>
               </ListItem>
               <ListItem>
                 <ListIcon as={AddIcon} color="#ecc94b" boxSize={4} mb={1}/>

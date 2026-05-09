@@ -2,7 +2,7 @@
 
 
 import React, { useState } from "react";
-import { Box, Grid, Text, Icon, Button, VStack, Collapse, Flex, IconButton } from "@chakra-ui/react";
+import { Box, Grid, Text, Icon, Button, VStack, Collapse, Flex, IconButton, useColorModeValue } from "@chakra-ui/react";
 import { FaUniversity, FaClipboardList, FaPen, FaFileAlt, FaClipboardCheck, FaLightbulb, FaEdit, FaHome, FaCheckCircle, FaAward, FaBook, FaUserGraduate, FaArrowDown, FaDollarSign, FaUsers, FaHandshake, FaNewspaper, FaChartLine, FaHourglassHalf, FaFont, FaTrophy, FaFastForward, FaClock, FaSearch, FaChalkboardTeacher, FaThumbsUp } from "react-icons/fa";
 import GridCard from "./GridCard";
 import useScrollTransition from "../templates/usescrolltransition";
@@ -10,6 +10,8 @@ import useScrollTransition from "../templates/usescrolltransition";
 const PhDResearchWorks = () => {
   useScrollTransition();
   const [isContentVisible, setIsContentVisible] = useState(false); // State to toggle content visibility
+  const headingColor = useColorModeValue("black", "white");
+  const textColor = useColorModeValue("gray.700", "gray.300");
 
   const handleToggle = () => {
     setIsContentVisible(!isContentVisible); // Toggle the visibility state
@@ -17,10 +19,10 @@ const PhDResearchWorks = () => {
 
   return (
     <Box  p={{ base: 6, md: 10 }} textAlign="center" minHeight="100vh" display="flex" flexDirection="column" className="component">
-      <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" mb={8} className="component1">
+      <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" mb={8} className="component1" color={headingColor}>
       Achievements & Milestones
       </Text>
-      <Text   fontSize={{ base: "sm", md: "lg" }}textAlign={'center'} className="component1">"At <strong>Matt Research Solutions,</strong> achievements and milestones reflect innovation, dedication, and excellence. Each <strong>milestone</strong> is a step toward unparalleled success with us!"</Text>
+      <Text   fontSize={{ base: "sm", md: "lg" }}textAlign={'center'} className="component1" color={textColor}>"At <strong>Matt Research Solutions,</strong> achievements and milestones reflect innovation, dedication, and excellence. Each <strong>milestone</strong> is a step toward unparalleled success with us!"</Text>
       <Grid templateColumns={{base: "repeat(1, 1fr)", sm: "repeat(2, 1fr)",lg: "repeat(3, 1fr)",}} gap={6} mt={5} className="component1">
         <GridCard color={"#02428d"} text={"98% Client Satisfaction Rate"} supportText={"Achieved a 98% satisfaction rate based on client feedback for quality, timeliness, and professionalism."} RAJESH={"WHITE"} SIVA={"ORANGE"} icon={FaHome}/>
         <GridCard  text={"Over 200 Research Proposals Approved"} supportText={"Supported the development and approval of more than 200 research proposals across various disciplines."} icon={FaAward} SIVA={"#02428d"}/>

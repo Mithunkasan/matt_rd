@@ -60,10 +60,10 @@ const HomeBlogs = () => {
     <Box py={20} bg={useColorModeValue('gray.50', 'gray.900')}>
       <Container maxW="7xl">
         <Box textAlign="center" mb={12}>
-          <Heading color="#02428d" mb={4} fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold">
+          <Heading color={useColorModeValue("#02428d", "blue.200")} mb={4} fontSize={{ base: '3xl', md: '4xl' }} fontWeight="bold">
             Our Latest Research Insights
           </Heading>
-          <Text color="gray.600" fontSize="lg" maxW="2xl" mx="auto">
+          <Text color={useColorModeValue("gray.600", "gray.400")} fontSize="lg" maxW="2xl" mx="auto">
             Stay updated with our latest articles, guides, and insights on academic research and publishing.
           </Text>
         </Box>
@@ -117,11 +117,11 @@ const HomeBlogs = () => {
                   <Text>{blog.readTime}</Text>
                 </Stack>
                 
-                <Heading as="h3" size="md" lineHeight="1.4" color="#02428d">
+                <Heading as="h3" size="md" lineHeight="1.4" color={useColorModeValue("#02428d", "blue.200")}>
                   {blog.title}
                 </Heading>
                 
-                <Text color="gray.600" fontSize="sm" noOfLines={3} flex={1} lineHeight="1.6">
+                <Text color={useColorModeValue("gray.600", "gray.400")} fontSize="sm" noOfLines={3} flex={1} lineHeight="1.6">
                   {blog.introduction}
                 </Text>
                 
@@ -130,9 +130,9 @@ const HomeBlogs = () => {
                     mt={2}
                     w="full"
                     bg="transparent"
-                    color="#02428d" 
+                    color={useColorModeValue("#02428d", "blue.200")} 
                     border="2px solid"
-                    borderColor="#02428d"
+                    borderColor={useColorModeValue("#02428d", "blue.200")}
                     _hover={{ bg: '#02428d', color: 'white' }}
                     rounded="full"
                     fontWeight="bold"

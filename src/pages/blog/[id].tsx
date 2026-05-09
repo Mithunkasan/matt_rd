@@ -265,6 +265,11 @@ const SingleBlogPage = ({ blog }: { blog: any }) => {
                 <Text fontSize={{ base: 'sm', md: 'lg' }} lineHeight="1.8" color={useColorModeValue('gray.700', 'gray.300')}>
                   {blog.conclusion}
                 </Text>
+                {blog.seoText && (
+                  <Text mt={6} fontWeight="bold" fontSize="lg" color={useColorModeValue("#02428d", "#e0a72b")} textAlign="center">
+                    {blog.seoText}
+                  </Text>
+                )}
               </Box>
             )}
 

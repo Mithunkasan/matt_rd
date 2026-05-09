@@ -1,5 +1,5 @@
 
-import { Box, Flex, Heading, Text, Image, Stack, Icon, List, ListItem, ListIcon, Link, Button } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, Image, Stack, Icon, List, ListItem, ListIcon, Link, Button, useColorModeValue } from "@chakra-ui/react";
 import { CheckIcon } from "@chakra-ui/icons";
 import { FaHeadphones } from "react-icons/fa";
 import { useState } from "react";
@@ -10,13 +10,18 @@ const CompanyIntroComponent = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleContent = () => setIsExpanded((prev) => !prev);
+  const bg = useColorModeValue("white", "gray.900");
+  const headingColor = useColorModeValue("blue.900", "blue.100");
+  const subTextColor = useColorModeValue("gray.600", "gray.400");
+  const listTextColor = useColorModeValue("gray.700", "gray.300");
+
   return (
     <Flex 
       direction={{ base: "column", md: "column", lg: "row" }} 
       p={{ base: 2, md: 6, lg: 8 }} 
       alignItems={{ base: "center", lg: "flex-start" }}
 
-      bg="white" 
+      bg={bg} 
       m={{ base: "30px 20px", md: "50px 40px", lg: " 75px 50px 40px 100px" }}
     >
       {/* Left Section - Main Image and Overlay Text */}
@@ -79,10 +84,10 @@ const CompanyIntroComponent = () => {
 
       {/* Right Section - Text and Details */}
       <Box flex="2" ml={{ base: 0, md: 6, lg: 70 }} className="component1">
-        <Text fontSize="lg" color="#02428d" fontWeight="bold" mb={2} mt={{base:'5',md:'0'}}>
+        <Text fontSize="lg" color={useColorModeValue("#02428d", "blue.200")} fontWeight="bold" mb={2} mt={{base:'5',md:'0'}}>
           About Our Company
         </Text>
-        <Heading as="h2" fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }} color="blue.900" mb={2}>
+        <Heading as="h2" fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }} color={headingColor} mb={2}>
         "End-to-End PhD Support Services for Research, Writing, and Data Analysis"
         </Heading>
         <Box>
@@ -105,7 +110,7 @@ const CompanyIntroComponent = () => {
   <Button
   size="sm"
   onClick={toggleContent}
-  color={'black'}
+  color={useColorModeValue('black', 'white')}
   variant="link"
   mt={1}
   fontWeight={'bold'}
@@ -131,22 +136,22 @@ const CompanyIntroComponent = () => {
         height={150} // Disables Next.js image optimization
       />
           <Box>
-            <Heading as="h3" fontSize={{ base: "md", md: "lg" }} color="#02428d">
+            <Heading as="h3" fontSize={{ base: "md", md: "lg" }} color={useColorModeValue("#02428d", "blue.100")}>
             Specialized Research Services
             </Heading>
-            <Text fontSize={{ base: "xs", md: "sm" }} mb={0} color="gray.600">
+            <Text fontSize={{ base: "xs", md: "sm" }} mb={0} color={subTextColor}>
             Providing tailored solutions for research design, data analysis, and academic writing to support scholars and professionals.
             </Text>
-            <Flex alignItems="center" color="#02428d" fontWeight="bold" mt={2}>
+            <Flex alignItems="center" color={useColorModeValue("#02428d", "blue.200")} fontWeight="bold" mt={2}>
               <Icon as={FaHeadphones} color="#ecc94b" mr={2} />
               Get Support
             </Flex>
           </Box>
         </Flex>
 
-        <List spacing={3} color="gray.700" p={0}>
+        <List spacing={3} color={listTextColor} p={0}>
           <ListItem display="flex" alignItems="center">
-            <ListIcon as={CheckIcon} color="#02428d" />
+            <ListIcon as={CheckIcon} color={useColorModeValue("#02428d", "blue.200")} />
             <Text fontSize={{ base: "md", md: "lg" }} as="span" mb={0}>
               Learn about our team{" "}
               <Link color="#ecc94b" href="/whychooseus">

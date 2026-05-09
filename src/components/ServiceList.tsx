@@ -8,6 +8,7 @@ import {
   Button,
   Center,
   Image,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import useScrollTransition from '../templates/usescrolltransition';
@@ -73,6 +74,8 @@ const services = [
 
 const ServiceCard = ({ title, description, imageUrl, link }) => {
   const router = useRouter(); // Use the useRouter hook to navigate
+  const cardBg = useColorModeValue('white', 'gray.700');
+  const textColor = useColorModeValue('gray.500', 'gray.300');
 
   const handleLearnMoreClick = () => {
     router.push(link); // Navigate to the respective page when button is clicked
@@ -85,7 +88,7 @@ const ServiceCard = ({ title, description, imageUrl, link }) => {
       boxShadow="lg"
       textAlign="center"
       padding={4}
-      bg="white"
+      bg={cardBg}
       mb={{base:'6',md:'8'}}
       position="relative"
       className='component1'
@@ -113,7 +116,7 @@ const ServiceCard = ({ title, description, imageUrl, link }) => {
       <Heading size="md" mb={2}>
         {title}
       </Heading>
-      <Text mb={4} color="gray.500" fontSize="sm">
+      <Text mb={4} color={textColor} fontSize="sm">
         {description}
       </Text>
       {/* Only add "Learn More" button functionality for specific services */}
@@ -136,9 +139,12 @@ const ServiceCard = ({ title, description, imageUrl, link }) => {
 };
 
 const WhatWeDo = () => {
+  const sectionBg = useColorModeValue('#f9fafb', 'gray.800');
+  const headingColor = useColorModeValue('#333', 'white');
+
   return (
-    <Box textAlign="center" py={10} px={5} bg="#f9fafb">
-      <Heading fontSize="4xl" color="#333" fontWeight="bold" mb={5} className='component'>
+    <Box textAlign="center" py={10} px={5} bg={sectionBg}>
+      <Heading fontSize="4xl" color={headingColor} fontWeight="bold" mb={5} className='component'>
         Our Services
       </Heading>
       <Text mb={12} fontSize="lg" className='component'>

@@ -200,6 +200,11 @@ const AdminPreviewPage = ({ blog }: { blog: any }) => {
                 <Text fontSize="lg" lineHeight="1.8" color={useColorModeValue('gray.700', 'gray.300')}>
                   {blog.conclusion}
                 </Text>
+                {blog.seoText && (
+                  <Text mt={6} fontWeight="bold" fontSize="lg" color="#02428d" textAlign="center">
+                    {blog.seoText}
+                  </Text>
+                )}
               </Box>
             )}
           </Box>
