@@ -16,6 +16,7 @@ type BlogResult = {
   sections: Section[]; keyPoints: KeyPoint[]; challenges: Challenge[]
   bestPractices: BestPractice[]; statistics: Stat[]
   keyTakeaways: string[]; conclusion: string
+  seoText?: string;
   imageUrl: string; query: string; generatedAt: string
   expertInsight?: string
   didYouKnow?: string[]
@@ -449,6 +450,11 @@ export default function AdminBlog() {
                   <div style={s.conclusionBox}>
                     <h3 style={s.sectionHeading}>Conclusion</h3>
                     <p style={s.bodyText}>{result.conclusion}</p>
+                    {result.seoText && (
+                      <p style={{...s.bodyText, marginTop: '20px', fontWeight: 'bold', textAlign: 'center', color: '#e0a72b'}}>
+                        {result.seoText}
+                      </p>
+                    )}
                   </div>
                 )}
 

@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import {
   Box, Avatar, Text, VStack, Heading, HStack, Flex, Button, Grid, GridItem, Stack, Container, IconButton, keyframes,
-  useBreakpointValue
+  useBreakpointValue,
+  useColorModeValue
 } from '@chakra-ui/react';
 import { ArrowBackIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 
@@ -56,6 +57,8 @@ const testimonials = [
 const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false); // State to trigger animation
+  const sectionBg = useColorModeValue("gray.50", "gray.800");
+  const cardBg = useColorModeValue("white", "gray.700");
 
   const isMobile = useBreakpointValue({ base: true, md: false }); // Detect if on mobile screen
 
@@ -90,7 +93,7 @@ const TestimonialSection = () => {
   useScrollTransition();
 
   return (
-    <Box bg="gray.70">
+    <Box bg={useColorModeValue("white", "gray.900")}>
       <Container maxW={'8xl'} pt={10} pb={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={'center'}>
           <Heading fontSize={{ base: '2xl', md: '4xl' }} className="component1">What Our Clients Speak</Heading>
@@ -98,7 +101,7 @@ const TestimonialSection = () => {
             Our global reach has allowed us to collaborate with clients from various parts of the world.
           </Text>
         </Stack>
-        <Box p={6} bg="gray.50" maxW="1600px" mx="auto" className="component1">
+        <Box p={6} bg={sectionBg} maxW="1600px" mx="auto" className="component1">
           <Grid
             templateColumns={{ base: '1fr', md: '50px 1fr 1fr 50px' }} // 1 column on mobile, 4 columns on desktop
             gap={6}
@@ -128,7 +131,7 @@ const TestimonialSection = () => {
             <GridItem colSpan={{ base: 1, md: 1 }} colStart={{ base: 1, md: 2 }}>
               <Box
                 animation={animate ? `${slideLeft} 1s ease forwards` : ''}
-                bg="white"
+                bg={cardBg}
                 borderRadius="md"
                 boxShadow="lg"
                 p={6}
@@ -158,7 +161,7 @@ const TestimonialSection = () => {
               <GridItem>
                 <Box
                   animation={animate ? `${slideLeft} 1s ease forwards` : ''}
-                  bg="white"
+                  bg={cardBg}
                   borderRadius="md"
                   boxShadow="lg"
                   p={6}

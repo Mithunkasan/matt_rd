@@ -1,5 +1,4 @@
-import React from "react";
-import { Box, Grid, Heading, Text, Image } from "@chakra-ui/react";
+import { Box, Grid, Heading, Text, Image, useColorModeValue } from "@chakra-ui/react";
 
 const CourseCategories = () => {
   
@@ -26,8 +25,11 @@ const CourseCategories = () => {
     },
   ];
 
+  const sectionBg = useColorModeValue("white", "gray.900");
+  const cardBg = useColorModeValue("gray.50", "gray.800");
+
   return (
-    <Box padding={{ base: "20px", sm: "20px" }} ml={{base:'0px',lg:'30px'}} bg="white">
+    <Box padding={{ base: "20px", sm: "20px" }} ml={{base:'0px',lg:'30px'}} bg={sectionBg}>
       <Heading textAlign="center" mb={{ base: "10px", md: "20px" }} className='component1'>
         We Are The Partner Excellence in Doctoral Writing
       </Heading>
@@ -59,7 +61,7 @@ const CourseCategories = () => {
             borderRadius="lg"
             padding={{ base: "40px", md: "40px" }}
             textAlign="center"
-            bg="gray.50"
+            bg={cardBg}
             className='component1'
             display="grid"
             justifyItems="center"

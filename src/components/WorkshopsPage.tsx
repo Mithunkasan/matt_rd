@@ -2,7 +2,7 @@
 
 
 import { useState } from 'react';
-import { Box, Button, Flex, Text, VStack, Collapse, Icon, Heading } from '@chakra-ui/react';
+import { Box, Button, Flex, Text, VStack, Collapse, Icon, Heading, useColorModeValue } from '@chakra-ui/react';
 import { AddIcon, MinusIcon } from '@chakra-ui/icons';
 
 const ResearchAccordion = () => {
@@ -118,6 +118,11 @@ const ResearchAccordion = () => {
     },
   ];
 
+  const btnBg = useColorModeValue("gray.100", "gray.700");
+  const btnColor = useColorModeValue("gray.700", "white");
+  const contentBg = useColorModeValue("gray.50", "gray.700");
+  const contentColor = useColorModeValue("gray.700", "gray.200");
+
   return (
     <Box px={{ base: "4", md: "10" }} py="5" mx="auto" mt={{ base: 4, md: 10 }} maxW={{ base: "95%", md: "90%", lg: "75%" }}>
       <Heading as="h2" size={{ base: "md", md: "lg" }} mb="4" textAlign="center" className='component1'>
@@ -131,10 +136,10 @@ const ResearchAccordion = () => {
         <Button variant="solid" bg="#ecc94b" color="black" borderRadius="md" px="6" py="3" fontWeight="bold" boxShadow="md" _hover={{bg:'#ecc94b'}}>
           Research Edition
         </Button>
-        <Button variant="outline" colorScheme="gray" bg="gray.100" color="gray.700" borderRadius="md" px="6" py="3" fontWeight="bold" boxShadow="md" _hover={{bg:'#ecc94b'}}>
+        <Button variant="outline" colorScheme="gray" bg={btnBg} color={btnColor} borderRadius="md" px="6" py="3" fontWeight="bold" boxShadow="md" _hover={{bg:'#ecc94b'}}>
           Research Review
         </Button>
-        <Button variant="outline" colorScheme="gray" bg="gray.100" color="gray.700" borderRadius="md" px="6" py="3" fontWeight="bold" boxShadow="md" _hover={{bg:'#ecc94b'}}>
+        <Button variant="outline" colorScheme="gray" bg={btnBg} color={btnColor} borderRadius="md" px="6" py="3" fontWeight="bold" boxShadow="md" _hover={{bg:'#ecc94b'}}>
           Research Implementation
         </Button>
       </Flex>
@@ -158,7 +163,7 @@ const ResearchAccordion = () => {
               <Icon as={openIndex === index ? MinusIcon : AddIcon} boxSize={{ base: 4, md: 5 }} />
             </Flex>
             <Collapse in={openIndex === index} animateOpacity>
-              <Box bg="gray.50" color="gray.700" borderTopWidth="1px" borderColor="gray.200" px={{ base: "4", md: "6" }} py={{ base: "3", md: "4" }}>
+              <Box bg={contentBg} color={contentColor} borderTopWidth="1px" borderColor="gray.200" px={{ base: "4", md: "6" }} py={{ base: "3", md: "4" }}>
                 {section.content}
               </Box>
             </Collapse>

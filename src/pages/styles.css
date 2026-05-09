@@ -1,3 +1,21 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2f455d;
+  --heading-color: #2e557c;
+  --card-bg: #ffffff;
+  --card-text: #383838;
+  --section-bg: #f9fafb;
+}
+
+[data-theme='dark'] {
+  --bg-color: #1a202c;
+  --text-color: #e2e8f0;
+  --heading-color: #ebf8ff;
+  --card-bg: #2d3748;
+  --card-text: #edf2f7;
+  --section-bg: #171923;
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -15,7 +33,7 @@ ul li{
     background-color: rgb(230,239,255) !important;
 }
 .heading{
-    color: #2e557c !important;
+    color: var(--heading-color) !important;
 }
 .a1{
     border-right: 1px dotted blue;
@@ -103,7 +121,7 @@ background-size: cover;
     -webkit-line-clamp: 3;
     overflow: hidden;
     margin-bottom: 10px;
-    color: #000;
+    color: var(--text-color);
 }
 
 .serr a{
@@ -279,11 +297,11 @@ background-size: cover;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
-    color: #383838;
+    color: var(--card-text);
     order: 3;
     width: 80%;
     padding-left: 10px;
-    background: #fff;
+    background: var(--card-bg);
     transition: all .6s ease;
     margin-bottom: 3%;
 }
@@ -323,7 +341,7 @@ footer p {
 }
 p {
     font-family: "Muli", sans-serif;
-    color: #2f455d;
+    color: var(--text-color);
     font-size: 20px;
     line-height: 30px;
     margin-bottom: 0px;

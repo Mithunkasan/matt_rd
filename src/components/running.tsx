@@ -1,6 +1,6 @@
 
 
-import { Box, Flex, Text, Image, Heading } from '@chakra-ui/react';
+import { Box, Flex, Text, Image, Heading, useColorModeValue } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 
 // Keyframe for left-to-right scrolling (top text)
@@ -33,7 +33,7 @@ const ScrollingText = () => {
           display="inline-block"
           // fontSize="5xl"
           fontWeight="bold"
-          color='black'
+          color={useColorModeValue('black', 'white')}
           textTransform={'uppercase'}
           animation={`${scrollLeft} 40s linear infinite`} // Ensure animation time is the same for both top and bottom
         >
@@ -64,7 +64,7 @@ const ScrollingText = () => {
           // fontSize="5xl"
           textTransform={'uppercase'}
           fontWeight="bold"
-          color='black'
+          color={useColorModeValue('black', 'white')}
           animation={`${scrollRight} 40s linear infinite`} // Ensure animation time is the same for both top and bottom
         >
           Excellent customer support &nbsp;

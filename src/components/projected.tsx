@@ -9,6 +9,7 @@ import {
   Image,
   Text,
   keyframes,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import router from 'next/router';
@@ -234,6 +235,9 @@ const cards = [
 const ServiceSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
+  const sectionBg = useColorModeValue("white", "gray.900");
+  const innerBg = useColorModeValue("#f4f4f4", "gray.800");
+  const cardBg = useColorModeValue("white", "gray.700");
 
   const visibleCards = cards.slice(currentIndex, currentIndex + 3);
 
@@ -266,14 +270,14 @@ const ServiceSection = () => {
   }, [currentIndex]);
 
   return (
-    <Box bg="white" w="100%" pt={8} pb={4} px={{ base: 4, sm: 6, md: 8 }}>
+    <Box bg={sectionBg} w="100%" pt={8} pb={4} px={{ base: 4, sm: 6, md: 8 }}>
       <Box textAlign="center" mt={5}>
         <Heading as="h3" size="xl" mb={4}>
           Featured Projects
         </Heading>
         <Text
           fontSize={{ base: 'md', sm: 'lg', md: 'xl' }}
-          color="gray.600"
+          color={useColorModeValue("gray.600", "gray.400")}
           mx={{ base: 4, sm: 6, md: 12 }}
         >
           Our featured projects span a wide range of fields, demonstrating our
@@ -282,7 +286,7 @@ const ServiceSection = () => {
         </Text>
       </Box>
 
-      <Box bg="#f4f4f4" py={{ base: 8, sm: 10, md: 12 }} width="100%">
+      <Box bg={innerBg} py={{ base: 8, sm: 10, md: 12 }} width="100%">
         <Flex
           direction="row"
           justify="center"
@@ -322,7 +326,7 @@ const ServiceSection = () => {
             {visibleCards.map((card, index) => (
               <Box
                 key={index}
-                bg="white"
+                bg={cardBg}
                 borderRadius="lg"
                 overflow="hidden"
                 width={{

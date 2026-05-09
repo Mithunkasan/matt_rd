@@ -20,7 +20,7 @@ export default function AdminLogin() {
     setError('')
     setLoading(true)
     await new Promise((r) => setTimeout(r, 600))
-    if (username === 'admin' && password === 'admin') {
+    if (username === 'admin@mattrd.com' && password === 'Mattrd@4321admin') {
       sessionStorage.setItem('admin_logged_in', 'true')
       router.push('/admin/blog')
     } else {

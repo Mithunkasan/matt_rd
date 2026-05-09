@@ -1,7 +1,10 @@
-import { Box, Heading, Grid, GridItem, Flex, Icon, Text } from "@chakra-ui/react";
+import { Box, Heading, Grid, GridItem, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaLock, FaFileAlt, FaRedo, FaHourglassEnd, FaBook, FaCreditCard, FaUsers, FaClock } from "react-icons/fa";
 
 const OurGuarantees = () => {
+  const cardBg = useColorModeValue("gray.50", "gray.800");
+  const cardHoverBg = useColorModeValue("gray.100", "gray.700");
+
   return (
     <Box p={{ base: 4, md: 8 }} maxW="1300px" mx="auto" textAlign="center">
       {/* Main Heading */}
@@ -14,11 +17,11 @@ const OurGuarantees = () => {
       <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(4, 1fr)' }} gap={6} p={{ base: '6', md: '0' }} className="component1">
         {/* Card 1 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           className="component1"
@@ -35,12 +38,12 @@ const OurGuarantees = () => {
 
         {/* Card 2 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           className="component1"
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -56,12 +59,12 @@ const OurGuarantees = () => {
 
         {/* Card 3 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           className="component1"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -77,12 +80,12 @@ const OurGuarantees = () => {
 
         {/* Card 4 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           className="component1"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -98,12 +101,12 @@ const OurGuarantees = () => {
 
         {/* Card 5 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           className="component1"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -119,12 +122,12 @@ const OurGuarantees = () => {
 
         {/* Card 6 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           className="component1"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -140,12 +143,12 @@ const OurGuarantees = () => {
 
         {/* Card 7 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           className="component1"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"
@@ -161,12 +164,12 @@ const OurGuarantees = () => {
 
         {/* Card 8 */}
         <GridItem
-          bg="gray.50"
+          bg={cardBg}
           p={{ base: 4, md: 6 }}
           borderRadius="md"
           className="component1"
           boxShadow={{ base: "-2px 7px 7px 0px #02428d", md: "-2px 7px 7px 0px #02428d" }}
-          _hover={{ bg: 'gray.100' }}
+          _hover={{ bg: cardHoverBg }}
           display="flex"
           flexDirection="column"
           justifyContent="center"

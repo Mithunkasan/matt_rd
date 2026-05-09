@@ -68,9 +68,9 @@ export default function Navbar() {
                 align={'center'}
             >
                 <Flex
-                    flex={{ base: 0, md: 'auto' }}
+                    flex={{ base: 0, lg: 'auto' }}
                     ml={{ base: -2 }}
-                    display={{ base: 'flex', md: 'none' }}
+                    display={{ base: 'flex', lg: 'none' }}
                 >
                     <IconButton
                         onClick={onToggle}
@@ -81,26 +81,24 @@ export default function Navbar() {
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
-                <Flex justify={{ base: 'center', md: 'start' }}>
-                    <HStack>
+                <Flex justify={{ base: 'center', lg: 'start' }} flex={1}>
+                    <HStack spacing={4}>
                         <Box
                             width={{
                                 base: "40px",
                                 sm: "50px",
-                                md: "70px",
-                                lg: "85px",
-                                xl: "110px",
-                                "2xl": "95px",
+                                md: "60px",
+                                lg: "70px",
+                                xl: "80px",
                             }}
                             height={{
                                 base: "40px",
                                 sm: "50px",
-                                md: "70px",
-                                lg: "8 0px",
-                                xl: "110px",
-                                "2xl": "95px",
+                                md: "60px",
+                                lg: "70px",
+                                xl: "80px",
                             }}
-                            ml={{ base: '1px', md: '18' }}
+                            ml={{ base: '0', md: '4' }}
                             position="relative"
                         >
                             <Image
@@ -116,13 +114,14 @@ export default function Navbar() {
                                 m={0}
                                 as='h3'
                                 fontSize={{
-                                    base: '18px', sm: '25px', md: '20px', lg: '14px', xl: '25px', '2xl': '25px'
+                                    base: '14px', sm: '18px', md: '22px', lg: '20px', xl: '24px'
                                 }}
+                                whiteSpace="nowrap"
                             >
                                 MATT RESEARCH SOLUTIONS
                             </Heading>
                         </Link>
-                        <Flex display={{ base: 'none', md: 'flex' }} ml={{ base: 0, sm: 2, md: 4, lg: 10, xl: 20 }}>
+                        <Flex display={{ base: 'none', lg: 'flex' }} ml={10}>
                             <DesktopNav navItems={NAV_ITEMS} />
                         </Flex>
                     </HStack>
@@ -220,7 +219,7 @@ const DesktopSubNav = ({ label, href }) => (
 );
 
 const MobileNav = ({ navItems }) => (
-    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ md: 'none' }}>
+    <Stack bg={useColorModeValue('white', 'gray.800')} p={4} display={{ lg: 'none' }}>
         {navItems.map((navItem) => (
             <MobileNavItem key={navItem.label} {...navItem} />
         ))}

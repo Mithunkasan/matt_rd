@@ -30,7 +30,7 @@ Always return valid JSON only — no markdown fences, no extra text whatsoever.`
         },
         {
           role: 'user',
-          content: `Write a comprehensive, in-depth blog post about: "${query}".
+          content: `Write a comprehensive, in-depth, and 100% SEO optimized blog post about: "${query}". Ensure the content follows all SEO best practices including keyword optimization, clear headings, and high readability.
 
 The post must be long, rich and detailed. Return ONLY a JSON object with this exact structure:
 {
@@ -105,6 +105,8 @@ Rules:
     const clean = rawText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
     const blogData: any = JSON.parse(clean)
 
+    blogData.seoText = "The Best PhD Service in Nagercoil"
+
     // ── 2. Build image prompt from title + query (no extra tokens) ───────────
     const imagePrompt = [
       `Photorealistic professional featured blog image about: "${blogData.title || query}".`,
@@ -164,6 +166,7 @@ Rules:
       faq: blogData.faq || [],
       furtherReading: blogData.furtherReading || [],
       conclusion: blogData.conclusion,
+      seoText: blogData.seoText,
       imageUrl,
       query,
       generatedAt: new Date().toISOString(),
